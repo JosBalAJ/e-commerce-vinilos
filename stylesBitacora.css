@@ -1,0 +1,255 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    box-shadow: rgb(7, 7, 7) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 20px;
+    width: 90vw;
+    padding: 10px;
+    margin: 30px auto auto auto;
+}
+
+.tabla {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+.columnas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+    box-sizing: border-box;
+}
+
+.primeraFila {
+    font-weight: bolder;
+    background-color: blue;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.columna1 {
+    width: 10%;
+    border-radius: 10px 0 0 0;
+}
+
+.columna2 {
+    width: 10%;
+}
+
+.columna3,
+.columna4 {
+    width: 15%;
+}
+
+.columna5 {
+    width: 25%;
+}
+
+.columna6 {
+    width: 25%;
+    border-radius: 0 10px 0 0;
+}
+
+.primeraFila {
+    border: solid #000988;
+    border-width: 0 1px 0 1px;
+    box-sizing: border-box;
+}
+
+.esquinaIzquierda {
+    border-radius: 10px 0 0 10px;
+    border-width: 0 1px 0 0;
+}
+
+.esquinaDerecha {
+    border-radius: 0 10px 10px 0;
+    border-width: 0 0 0 1px;
+}
+
+.fila {
+    background-color: #202020;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid #0f0f0f;
+    border-width: 0 1px 2px 1px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.fila::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.scrollbar {
+    justify-content: flex-start;
+}
+
+.fila::-webkit-scrollbar-track {
+    background: #303030;
+    border-radius: 3px;
+}
+
+.fila::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.largos {
+    font-size: small;
+}
+
+.column1,
+.column4 {
+    width: 20%;
+}
+
+.column2,
+.column3,
+.column5,
+.column6 {
+    width: 15%;
+}
+
+#botonesAccionesUsuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#botonesAccionesUsuarios>span {
+    width: 100px;
+    font-weight: bolder;
+}
+
+.alto {
+    height: 60px;
+}
+
+@media (max-width: 480px) {
+    main h1 {
+        font-size: 20px;
+    }
+
+    .tabla {
+        width: 100%;
+        font-size: 5px;
+    }
+
+    .primeraFila {
+        height: 30px;
+    }
+
+    .fila {
+        height: 40px;
+    }
+
+    .largos {
+        font-size: 4px;
+    }
+
+    .fila::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+
+    #btnVolver {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    #botonesAccionesUsuarios>span {
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .btnBitacora {
+        font-size: 12px;
+        margin: 0 0 10px 0;
+        width: fit-content;
+        padding: 8px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .tabla {
+        width: 100%;
+        font-size: 0.6rem;
+    }
+
+    .primeraFila {
+        height: 50px;
+    }
+
+    .fila {
+        height: 60px;
+    }
+
+    .largos {
+        font-size: 8px;
+    }
+
+    .fila::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    #botonesAccionesUsuarios>span {
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .btnBitacora {
+        font-size: 12px;
+        margin: 0 0 10px 0;
+        width: fit-content;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 930px) {
+    .tabla {
+        width: 100%;
+        font-size: 0.7rem;
+    }
+
+    .fila {
+        height: 80px;
+    }
+
+    .largos {
+        font-size: 10px;
+    }
+
+    .fila::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    .btnBitacora {
+        margin: 0 0 10px 0;
+    }
+}

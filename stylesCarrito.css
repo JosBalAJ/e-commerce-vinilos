@@ -1,0 +1,209 @@
+body {
+    text-align: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    box-shadow: rgb(7, 7, 7) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 20px;
+    width: 85vw;
+    padding: 10px;
+    margin: 30px auto auto auto;
+}
+
+img {
+    width: 100px;
+    border-radius: 4px;
+}
+
+#descripcionResumen {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    font-weight: bolder;
+    background-color: blue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contenedorArticulo {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    background-color: #0000ff2a;
+    border-radius: 10px;
+    padding: 3px;
+    font-weight: bolder;
+}
+
+.botonEliminar {
+    margin-top: 20px;
+}
+
+.btnCantidad {
+    background-color: aqua;
+    padding: 10px;
+    color: black;
+    font-weight: bolder;
+    border: solid 1px #005266;
+    user-select: none;
+}
+
+.btnDisminuir,
+.btnAumentar {
+    background-color: aqua;
+    padding: 10px 15px 10px 15px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+    border: solid 1px #005266;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.btnAumentar {
+    border-radius: 0 5px 5px 0;
+}
+
+.btnDisminuir:hover,
+.btnAumentar:hover {
+    background-color: #005266;
+}
+
+#botonesResumen {
+    margin: 30px;
+}
+
+#paypal-button-container {
+    margin-bottom: 15px;
+    max-width: 300px;
+}
+
+#totalNumero {
+    padding: 15px;
+    background-color: #0000ff2a;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+#totalTexto {
+    padding: 15px;
+    margin: 0 10px 0 -15px;
+    background-color: blue;
+    border-radius: 10px 0 0 10px;
+}
+
+@media (max-width: 480px) {
+    main h1 {
+        font-size: 20px;
+    }
+
+    #descripcionResumen {
+        width: 100%;
+        padding: 5px;
+    }
+
+    #descripcionResumen span {
+        font-size: 10px;
+    }
+
+    #totalNumero,
+    #totalTexto {
+        padding: 5px;
+        font-size: 13px;
+    }
+
+    #botonesResumen {
+        font-size: 12px;
+    }
+
+    .contenedorArticulo {
+        margin: 5px 0 5px 0;
+    }
+
+    .contenedorArticulo img {
+        width: 45px;
+    }
+
+    .contenedorArticulo span {
+        font-size: 10px;
+    }
+
+    .btnDisminuir,
+    .btnAumentar,
+    .btnCantidad {
+        padding: 3px;
+    }
+
+    .btnCantidad {
+        margin: auto -5px auto -5px;
+    }
+
+    .botonEliminar {
+        margin-top: 10px;
+    }
+
+    .btnEliminarDisco {
+        font-size: 8px !important;
+        padding: 5px;
+        border-radius: 7px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #descripcionResumen {
+        width: 95%;
+    }
+
+    #descripcionResumen span,
+    .contenedorArticulo span {
+        font-size: 0.8rem;
+    }
+
+    #totalNumero,
+    #totalTexto {
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    .contenedorArticulo {
+        margin: 5px 0 5px 0;
+    }
+
+    .contenedorArticulo img {
+        width: 60px;
+    }
+
+    .btnDisminuir,
+    .btnAumentar,
+    .btnCantidad {
+        padding: 5px;
+    }
+
+    .btnCantidad {
+        margin: auto -5px auto -5px;
+    }
+
+    .botonEliminar {
+        margin-top: 13px;
+    }
+
+    .btnEliminarDisco {
+        font-size: 8px !important;
+        padding: 5px;
+        border-radius: 7px;
+    }
+}

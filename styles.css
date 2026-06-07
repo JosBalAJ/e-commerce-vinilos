@@ -1,0 +1,886 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #cccfd1;
+}
+
+body {
+    background-color: #202020;
+    margin: 0;
+}
+
+header {
+    background-color: #161616;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    padding: 2vh 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    max-width: 8em;
+}
+
+main {
+    margin-top: 3vh;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#filas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boton {
+    background-color: #00008a;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    width: 70px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #000049;
+}
+
+.btnAlCarrito {
+    width: 50%;
+}
+
+#filas>div {
+    width: 20vw;
+    height: auto;
+    margin-bottom: 1vh;
+    padding: 10px;
+    background-color: rgb(19, 19, 19);
+    box-shadow: 2px 2px 2px #545455;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filas>div:hover {
+    transform: scale(1.07);
+}
+
+#botonesHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#botonesUsuario {
+    padding: 20px 0;
+    width: 100%;
+}
+
+.btnIniciarSesion {
+    border: 1px solid #00008a;
+    border-radius: 15px;
+    padding: 9px;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+.btnIniciarSesion:hover {
+    border: 1px solid #000049;
+}
+
+#btnRegistrarse {
+    background-color: #ffffff00;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 9px;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+#btnRegistrarse:hover {
+    background-color: #0091ca;
+    border: 1px solid #0091ca;
+}
+
+.modalIniciarSesion,
+.modalRegistrarse,
+.modalAgregarDisco,
+.modalEliminarDisco,
+.modalModificarDisco,
+.modalEliminarUsuario,
+.modalModificarUsuario,
+.modalAgregarUsuario {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #313131bb;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s;
+    z-index: 1;
+    --transform: translateY(-100vh);
+    --transition: transform 0.8s;
+}
+
+#contenedorIniciarSesion,
+#contenedorRegistrarse,
+#contenedorAgregarDiscco,
+#contenedorEliminarDiscco,
+#contenedorModificarDiscco,
+#contenedorEliminarUsuario,
+#contenedorModificarUsuario,
+#contenedorAgregarUsuario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    width: 40%;
+    background-color: #202020;
+    box-shadow: 2px 2px 2px #eff3ec;
+    border-radius: 10px;
+    padding: 10px;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.mostrarModal {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity 0.6s;
+    --transform: translateY(0);
+}
+
+#formularioIniciarSesion {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 40px 30px 40px 30px;
+}
+
+#formularioIniciarSesion>span {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#formularioRegistrarse>span {
+    text-align: left;
+    margin-top: 10px;
+}
+
+#btnIngresar {
+    margin: 15px 0 10px 0;
+    background-color: #006a94;
+    font-weight: bolder;
+    width: 95%;
+    text-align: center !important;
+}
+
+#btnIngresar:hover {
+    background-color: #00384e;
+}
+
+#formularioRegistrarse {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: repeat(7, 30px 30px);
+}
+
+#btnFormularioRegistrarse {
+    width: 95%;
+    background-color: #006a94;
+    font-weight: bolder;
+    margin: 15px 0 10px 0;
+    text-align: center !important;
+}
+
+#btnFormularioRegistrarse:hover {
+    background-color: #00384e;
+}
+
+#formularioIniciarSesion>input,
+#formularioRegistrarse>input {
+    border-radius: 5px;
+    background-color: rgb(41, 41, 41);
+}
+
+#formularioIniciarSesion>input:focus,
+#formularioRegistrarse>input:focus {
+    outline: none;
+    border: 2px solid #00384e;
+    box-shadow: 0 0 7px #00384e;
+}
+
+main {
+    text-align: center;
+}
+
+#slogan {
+    transition: all 0.5s;
+    font-size: 4rem;
+    -webkit-text-stroke: 2px #cccfd1;
+    color: transparent;
+    text-shadow: 3px 5px 0px #076dcc,
+        6px 10px 0px #990066,
+        10px 18px 10px #482896;
+}
+
+#slogan:hover {
+    text-shadow: none;
+    color: #076dcc;
+    text-shadow: 5px 5px 5px #482896;
+}
+
+#misionVision {
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #00384e;
+    box-shadow: 0px 0px 7px #59fff7;
+    perspective: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 60vh;
+    padding: 20px;
+    margin: 20px;
+    z-index: 0;
+}
+
+.tituloCard {
+    position: absolute;
+    background: radial-gradient(circle, rgba(113, 0, 151, 1) 0%, rgba(73, 0, 142, 1) 31%, rgba(10, 16, 124, 1) 49%, rgba(4, 6, 114, 1) 67%);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+    transform-origin: 0px;
+    box-shadow: 0px 0px 7px #012cbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .tituloCard {
+    transition: all 0.5s;
+    transform: rotateY(-85deg);
+}
+
+.card>p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#contacto {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#infoContacto {
+    padding: 20px;
+    margin: 20px;
+    background: radial-gradient(circle, rgba(113, 0, 151, 1) 0%, rgba(73, 0, 142, 1) 31%, rgba(10, 16, 124, 1) 49%, rgba(4, 6, 114, 1) 67%);
+    box-shadow: 0px 0px 8px #1f51f7;
+    width: 30%;
+    border-radius: 10px;
+}
+
+#infoContacto>p {
+    font-size: 18px;
+}
+
+#mapa {
+    width: 50%;
+    padding: 10px;
+    background: radial-gradient(circle, rgba(113, 0, 151, 1) 0%, rgba(73, 0, 142, 1) 31%, rgba(10, 16, 124, 1) 49%, rgba(4, 6, 114, 1) 67%);
+    box-shadow: 0px 0px 8px #1f51f7;
+    border-radius: 10px;
+}
+
+iframe {
+    border-radius: 10px;
+}
+
+#contacto a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#contacto a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#btnVamosComprar {
+    display: flex;
+    background-color: #006a94;
+    border: none;
+    width: 30vw;
+    height: 5vh;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+#btnVamosComprar:hover {
+    background-color: #00384e;
+}
+
+.discoAlbum,
+.discoArtista {
+    margin: 0;
+}
+
+.discoArtista {
+    font-style: italic;
+}
+
+.discoGeneroContenedor {
+    background-color: #000000;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.discoGenero {
+    background-color: #001558;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+    cursor: default;
+}
+
+.discoPrecio {
+    margin: 5px;
+}
+
+.btnAlCarrito {
+    width: fit-content;
+}
+
+#btnAgregarDisco,
+#btnEliminarDisco,
+#btnModificarDisco {
+    cursor: pointer;
+    height: 50vh !important;
+}
+
+#formularioAgregarDisco {
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 110px;
+    align-items: center;
+}
+
+#spanGenAgregar {
+    grid-column: span 2;
+    grid-row: 7;
+}
+
+#spanGenModificar {
+    grid-column: span 2;
+    grid-row: 8;
+}
+
+#contGenAgregar {
+    grid-column: span 2;
+    grid-row: 8;
+}
+
+#contGenModificar {
+    grid-column: span 2;
+    grid-row: 9;
+}
+
+.contenedorGeneros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.checkbox {
+    width: fit-content;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px 8px;
+    background-color: rgba(0, 0, 0, 0.16);
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+    justify-content: center;
+    margin: 3px;
+    border-radius: 5px;
+    font-size: small;
+}
+
+.checkbox:hover {
+    background-color: #2c2c2c;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.checkbox>.textoGenero {
+    transition: 0.3s;
+}
+
+.inputCheckbox {
+    display: none;
+}
+
+.inputCheckbox:checked+.contenedorCheckbox .checkbox {
+    background-color: #131580;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.inputCheckbox:checked+.contenedorCheckbox .checkbox .textoGenero {
+    transform: translateY(-2px);
+}
+
+.inputCheckbox:checked+.contenedorCheckbox .checkbox:hover {
+    background-color: #0b0f44;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
+}
+
+#formularioModificarDisco {
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 110px;
+    align-items: end;
+}
+
+#formularioModificarUsuario,
+#formularioAgregarUsuario {
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-template-rows: repeat(7, 30px);
+    align-items: end;
+}
+
+#formularioAgregarDisco>input,
+#formularioEliminarDisco>input,
+#formularioModificarDisco>input,
+#formularioEliminarUsuario>input,
+#formularioModificarUsuario>input,
+#formularioAgregarUsuario>input {
+    border-radius: 5px;
+    background-color: rgb(41, 41, 41);
+}
+
+#formularioAgregarDisco>input:focus,
+#formularioEliminarDisco>input:focus,
+#formularioModificarDisco>input:focus,
+#formularioEliminarUsuario>input:focus,
+#formularioModificarUsuario>input:focus,
+#formularioAgregarUsuario>input:focus {
+    outline: none;
+    border: 2px solid #00384e;
+    box-shadow: 0 0 7px #00384e;
+}
+
+#btnFormAgregarDisco,
+#btnFormEliminarDisco,
+#btnFormModificarDisco,
+#btnFormEliminarUsuario,
+#btnFormModificarUsuario,
+#btnFormAgregarUsuario {
+    width: 60%;
+    margin: 10px;
+    background-color: #006a94;
+    font-weight: bolder;
+}
+
+#btnFormEliminarDisco,
+#btnFormEliminarUsuario {
+    width: 40%;
+}
+
+#btnFormAgregarDisco:hover,
+#btnFormEliminarDisco:hover,
+#btnFormModificarDisco:hover,
+#btnFormEliminarUsuario:hover,
+#btnFormModificarUsuario:hover,
+#btnFormAgregarUsuario:hover {
+    background-color: #00384e;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+h4 {
+    margin: 5px 0 0 0;
+}
+
+.aclaracion {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+#carrito {
+    position: fixed;
+    background-color: yellow;
+    bottom: 70px;
+    right: 15px;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#carrito:hover {
+    transform: scale(1.1);
+}
+
+.extras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnBitacora {
+    margin: 30px 10px;
+    width: 300px;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: #006a94;
+}
+
+.btnBitacora:hover {
+    background-color: #00384e;
+    transform: scale(1.07);
+}
+
+.btnUsuarios {
+    width: 200px;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: #00384e;
+}
+
+.btnUsuarios:hover {
+    background-color: #002736;
+    transform: scale(1.07);
+}
+
+@media (max-width: 480px) {
+    .boton {
+        font-size: 12px;
+    }
+
+    #filas>div {
+        width: 40vw;
+    }
+
+    .discoAlbum {
+        font-size: 15px;
+    }
+
+    .discoArtista {
+        font-size: 12px;
+    }
+
+    .discoGeneroContenedor {
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .discoGenero {
+        font-size: 10px;
+        padding: 2px;
+        margin: 2px;
+    }
+
+    .discoPrecio {
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    .btnAlCarrito {
+        width: fit-content;
+        font-size: 12px;
+    }
+
+    .contenedorDiscos h4 {
+        font-size: 15px;
+        margin: 0;
+    }
+
+    #carrito {
+        bottom: 50px;
+        right: 5px;
+        height: 35px;
+        width: 35px;
+        border-radius: 15px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    header>h1 {
+        font-size: 25px;
+    }
+
+    #slogan {
+        font-size: 40px;
+    }
+
+    #botonesHeader {
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        width: 30vw;
+    }
+
+    #botonesUsuario {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #formularioIniciarSesion,
+    #formularioRegistrarse {
+        grid-template-columns: 100%;
+        width: 60%;
+        margin-top: -20px;
+    }
+
+    #formularioRegistrarse {
+        grid-template-rows: repeat(7, 25px 25px);
+    }
+
+    #formularioIniciarSesion span,
+    #formularioRegistrarse span {
+        font-size: 13px;
+    }
+
+    #misionVision {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 60vw;
+        height: 30vh;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    #contacto {
+        flex-direction: column;
+        align-items: center;
+        margin: -30px 0 30px 0;
+    }
+
+    #infoContacto {
+        width: 60%;
+        height: 25vh;
+    }
+
+    #infoContacto p {
+        font-size: 0.8rem;
+    }
+
+    #mapa {
+        width: 90%;
+    }
+
+    #btnVamosComprar {
+        width: 200px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+
+    #btnAgregarDisco,
+    #btnEliminarDisco,
+    #btnModificarDisco {
+        height: 25vh !important;
+    }
+
+    #contenedorIniciarSesion,
+    #contenedorRegistrarse,
+    #contenedorEliminarDiscco,
+    #contenedorEliminarUsuario {
+        width: 75vw;
+    }
+
+    #contenedorAgregarDiscco,
+    #contenedorModificarDiscco,
+    #contenedorModificarUsuario,
+    #contenedorAgregarUsuario {
+        width: 85%;
+    }
+
+    #formularioModificarUsuario,
+    #formularioAgregarUsuario {
+        grid-template-columns: 130px 180px;
+    }
+
+    #contenedorModificarDiscco h1 {
+        font-size: 22px;
+    }
+
+    .aclaracion {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    #formularioAgregarDisco {
+        grid-template-columns: 150px 170px;
+        grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 130px;
+    }
+
+    #formularioModificarDisco {
+        grid-template-columns: 150px 170px;
+        grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 135px;
+    }
+
+    #saludo {
+        font-size: 15px;
+    }
+
+    #btnCerrarSesion {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #slogan {
+        font-size: 3.5rem;
+    }
+
+    .card {
+        width: 40vw;
+        height: 40vh;
+    }
+
+    #contenedorIniciarSesion,
+    #contenedorRegistrarse,
+    #contenedorAgregarDiscco,
+    #contenedorEliminarDiscco,
+    #contenedorModificarDiscco,
+    #contenedorEliminarUsuario,
+    #contenedorModificarUsuario,
+    #contenedorAgregarUsuario {
+        width: 60%;
+    }
+
+    #filas>div {
+        width: 27vw;
+    }
+
+    .discoAlbum {
+        font-size: 20px;
+    }
+
+    .discoArtista {
+        font-size: 15px;
+    }
+
+    .discoGeneroContenedor {
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .discoGenero {
+        font-size: 12px;
+        padding: 2px;
+        margin: 2px;
+    }
+
+    .discoPrecio {
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    .btnAlCarrito {
+        width: fit-content;
+        font-size: 13px;
+    }
+
+    .contenedorDiscos h4 {
+        font-size: 15px;
+        margin: 0;
+    }
+
+    #btnAgregarDisco,
+    #btnEliminarDisco,
+    #btnModificarDisco {
+        height: 30vh !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 930px) {
+    .card {
+        width: 30vw;
+        height: 50vh;
+    }
+
+    #btnAgregarDisco,
+    #btnEliminarDisco,
+    #btnModificarDisco {
+        height: 30vh !important;
+    }
+
+    #contenedorAgregarDiscco,
+    #contenedorModificarDiscco,
+    #contenedorModificarUsuario,
+    #contenedorAgregarUsuario {
+        width: 60%;
+    }
+}

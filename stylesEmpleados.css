@@ -1,0 +1,114 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formularioEmpleado {
+    background-color: #161616;
+    margin: 30px 0 30px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgb(7, 7, 7) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+#formEmplRegistrarse {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(5, 40px 30px);
+}
+
+#formEmplIniciarSesion {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(2, 40px 30px);
+}
+
+#formEmplRegistrarse>span,
+#formEmplIniciarSesion>span {
+    margin-top: 20px;
+}
+
+#formEmplRegistrarse>input,
+#formEmplIniciarSesion>input,
+#formEmplRegistrarse>select {
+    border-radius: 5px;
+    background-color: rgb(41, 41, 41);
+}
+
+#formEmplRegistrarse>input:focus,
+#formEmplIniciarSesion>input:focus,
+#formEmplRegistrarse>select:focus {
+    outline: none;
+    border: 2px solid #00384e;
+    box-shadow: 0 0 7px #00384e;
+}
+
+#btnEmplRegistrarse,
+#btnEmplIniciarSesion {
+    width: 90%;
+    font-weight: bolder;
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 50px;
+    }
+
+    header {
+        padding: 2vh 1vh;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .formularioEmpleado {
+        width: 75%;
+        text-align: center;
+    }
+
+    .formularioEmpleado h2 {
+        font-size: 20px;
+    }
+
+    #formEmplRegistrarse,
+    #formEmplIniciarSesion {
+        grid-template-columns: 100%;
+        text-align: start;
+        width: 70%;
+        margin-top: -20px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .formularioEmpleado {
+        width: 70%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 930px) {
+    main {
+        flex-direction: column;
+    }
+
+    .formularioEmpleado {
+        width: 60%;
+    }
+}
