@@ -1,11 +1,10 @@
-<script
-    src="https://www.paypal.com/sdk/js?client-id=AQfMSnMCqTRIh3Dgc9-3NkG984jjKhOtKeREJnGqn-K1WST9dxLGglpXPtDzcR1LIISNV43Q-2MuutrH&currency=MXN"></script>
-
 <?php
+// 1. Iniciar y validar la sesión antes de CUALQUIER otra cosa
 require 'controlSesion.php';
 
 if (!isset($_SESSION['email'])) {
     header("Location: index.php");
+    exit(); // Detiene la ejecución para asegurar la redirección
 }
 ?>
 
@@ -18,6 +17,7 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stylesCarrito.css">
     <title>Vinilos Josue - Carrito</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=AQfMSnMCqTRIh3Dgc9-3NkG984jjKhOtKeREJnGqn-K1WST9dxLGglpXPtDzcR1LIISNV43Q-2MuutrH&currency=MXN"></script>
 </head>
 
 <body>
@@ -37,7 +37,6 @@ if (!isset($_SESSION['email'])) {
         </div>
 
         <?php
-
         require('conexion.php');
         $email = $_SESSION['email'];
         $sql = "SELECT * FROM discos_carrito WHERE email = '$email'";
